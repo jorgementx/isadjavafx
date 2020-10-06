@@ -48,16 +48,16 @@ public class ComboBoxExperiments extends Application  {
 
         primaryStage.setTitle("Txanponak");
 
-        ComboBox comboBox = new ComboBox();
+        ComboBox<String> comboBox = new ComboBox<>();
 
         comboBox.getItems().add("BTC");
         comboBox.getItems().add("ETH");
         comboBox.getItems().add("LTC");
         comboBox.setEditable(true);
 
-        Label label = new Label(comboBox.getValue() + "=" + this.prezioaLortu((String) comboBox.getValue()) + "EUR");
+        Label label = new Label("1 " + comboBox.getValue() + "=" + this.prezioaLortu(comboBox.getValue()) + "€");
 
-        comboBox.setOnAction(event -> label.setText("1 " + comboBox.getValue() + "=" + this.prezioaLortu((String) comboBox.getValue()) + "€"));
+        comboBox.setOnAction(event -> label.setText("1 " + comboBox.getValue() + "=" + this.prezioaLortu(comboBox.getValue()) + "€"));
 
         VBox vbox = new VBox(label, comboBox);
 
